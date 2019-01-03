@@ -39,7 +39,6 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers '     xR1Server' `);
     console.log(`----------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`xR1 Server`,"https://www.twitch.tv/Mdax77xR1")
 client.user.setStatus("online")
  
 });
@@ -156,16 +155,7 @@ if (message.content.startsWith('السلام عليكم')){
 
 
 
-client.on('message', message => {
-if (message.content.startsWith('رابط')){
-     let ra3d = new Discord.RichEmbed()
-  .setColor("#e9ab26")
-  .setDescription("**https://discord.gg/CPzQxgs**")
-     
-     
-  message.channel.sendEmbed(ra3d);
-    }
-});
+
 
 
 const Sra7a = [
@@ -356,6 +346,7 @@ if (message.content === '$help') {
       .addField("**❖ $getid <Mention>**","**  لرؤية اي دي اي شخص **")
       .addField("**❖ $ping**","**لمعرفة بنق البوت  **")
       .addField("**❖ $avatar<Mention>**","**لرؤية صورة اي شخص**")
+      .addField("**❖ $رابط<Mention>**","**يرسلك رابط السيرفر**")
       .addField("**۩ஜ▬▬▬▬▬▬✦ (أوامر البوت (للإدارة ✦▬▬▬▬▬▬ஜ۩**","** **")
       .addField("**❖ $mutechannel**","**لتقفيل الشات**")
       .addField("**❖ $unmutechannel**","**لفتح الشات بعد تقفيله**")
@@ -392,7 +383,8 @@ if (message.content === '$help') {
       .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
       .addField("**❖ $cuttwet**","**لعبة كت  تويت**")
       .addField("**❖  $فكك**","**لعبة فكك **")
-
+      .addField("**۩ஜ▬▬▬▬▬▬✦The Maker Of Bot / صانع البوت✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ @MdAx77x .#4461 **","**صانع هذا البوت**")
     .setColor('RANDOM')
   message.author.sendEmbed(embed);
     }
@@ -592,7 +584,7 @@ embed: new Discord.RichEmbed()
          .addField('``My Prefix``' , `[ $ ]` , true)
          .addField('``My Language``' , `[ JavaScript ]` , true)
          .addField('``Bot Version``' , `[ v0.1 ]` , true)
-         .setFooter('By | <@! - Mdax .#0518 >')
+         .setFooter('By | <@MdAx77x .#4461 >')
 })
 }
 });
@@ -702,7 +694,7 @@ client.on('message',message =>{
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "xR1 Server";
+    let copy = "Made By : @MdAx77x .#4461 ";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
@@ -1183,6 +1175,88 @@ client.on("guildMemberAdd", async member => {
 
 
 
+
+const adminprefix = "*";
+const devs = ['472880961680572446','335484868479811584'];
+client.on('message', message => {
+ var argresult = message.content.split(` `).slice(1).join(' ');
+   if (!devs.includes(message.author.id)) return;
+   
+if (message.content.startsWith(adminprefix + 'setgame')) {
+ client.user.setGame(argresult);
+   message.channel.sendMessage(`**${argresult} تم تغيير بلاينق البوت إلى **`)
+} else
+ if (message.content.startsWith(adminprefix + 'setname')) {
+client.user.setUsername(argresult).then
+   message.channel.sendMessage(`**${argresult}** : تم تغيير أسم البوت إلى`)
+return message.reply("**لا يمكنك تغيير الاسم يجب عليك الانتظآر لمدة ساعتين . **");
+} else
+ if (message.content.startsWith(adminprefix + 'setavatar')) {
+client.user.setAvatar(argresult);
+ message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
+     } else    
+if (message.content.startsWith(adminprefix + 'setstream')) {
+ client.user.setGame(argresult, "https://www.twitch.tv/Mdax77xR1");//حقوق دايموند كودز
+   message.channel.sendMessage(`**تم تغيير تويتش البوت إلى  ${argresult}**`)//حقوق دايموند كودز
+}
+});
+
+
+
+
+
+
+client.on('message', message => {
+    if (message.content.startsWith("$رابط")) {
+
+  message.channel.createInvite({
+        thing: true,
+        maxUses: 100,
+        maxAge: 86400
+    }).then(invite =>
+      message.author.sendMessage(invite.url)
+    )
+    const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setDescription("| ✅  | ❤  تم ارسال الرابط في الخاص  ")
+      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
+              const Embed11 = new Discord.RichEmbed()
+        .setColor("RANDOM")
+                .setAuthor(message.guild.name, message.guild.iconURL)
+        .setDescription(`
+**
+---------------------
+-[${message.guild.name}]  هذا هو رابط سيرفر
+---------------------
+-هذا الرابط صالح ل 100 مستخدم فقط
+---------------------
+-هذا الرابط صالح لمده 24 ساعه فقط
+---------------------
+**`)
+      message.author.sendEmbed(Embed11)
+    }
+});
+
+
+
+client.on('message' , message => {
+if (message.content === '$help.Cases') {
+           if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
+         let embed = new Discord.RichEmbed()
+
+      .setThumbnail(message.author.avatarURL)    
+      .addField("**۩ஜ▬▬▬▬▬▬✦أوامر حالات البوت✦▬▬▬▬▬▬ஜ۩**","** **")
+      .addField("**❖ $setgame**","**يغير بلاينق البوت**")
+      .addField("**❖ $setstream**","**يغير ستريمنق البوت**")
+      .addField("**❖ $setname**","**يغير اسم البوت**")
+      .addField("**❖ $setavatar**","**يغير صورة البوت**")
+      .addField("**۩ஜ▬▬▬▬▬▬✦Made By : MdAx77x .✦▬▬▬▬▬▬ஜ۩**","** **")
+
+
+    .setColor('RANDOM')
+  message.author.sendEmbed(embed);
+    }
+});
 
 
 
