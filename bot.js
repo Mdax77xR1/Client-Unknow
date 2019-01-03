@@ -377,7 +377,8 @@ if (message.content === '$help') {
            if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
          let embed = new Discord.RichEmbed()
 
-      .setThumbnail(message.author.avatarURL)    
+      .setThumbnail(message.author.avatarURL)
+      .addField("**❖ $help.Cases**","**اوامر الحالات**")  
       .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
       .addField("**❖ $sara7a**","**لعبة صراحه**")
       .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
