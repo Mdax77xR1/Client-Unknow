@@ -402,7 +402,7 @@ if (message.content === '$help') {
          let embed = new Discord.RichEmbed()
 
       .setThumbnail(message.author.avatarURL)
-      .addField("**❖ $help.Cases**","**اوامر الحالات**")  
+      .addField("**❖ $Cases**","**اوامر الحالات**")  
       .addField("**۩ஜ▬▬▬▬▬▬✦أوامر الالعاب✦▬▬▬▬▬▬ஜ۩**","** **")
       .addField("**❖ $sara7a**","**لعبة صراحه**")
       .addField("**❖ $rps**","**لعبة حجرة ورقة مقص**")
@@ -1252,7 +1252,7 @@ client.on('message', message => {
 
 
 client.on('message' , message => {
-if (message.content === '$help.Cases') {
+if (message.content === '$Cases') {
            if (!message.member.hasPermission('MANAGE_MESSAGES')) return;
          let embed = new Discord.RichEmbed()
 
