@@ -1176,7 +1176,7 @@ client.on("guildMemberAdd", async member => {
 
 
 
-const adminprefix = "*";
+const adminprefix = "$";
 const devs = ['472880961680572446','335484868479811584'];
 client.on('message', message => {
  var argresult = message.content.split(` `).slice(1).join(' ');
