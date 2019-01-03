@@ -154,6 +154,30 @@ if (message.content.startsWith('السلام عليكم')){
 
 
 
+client.on('message', message => {
+if (message.content.startsWith('$help.Cases')){
+     let ra3d = new Discord.RichEmbed()
+  .setColor("#e9ab26")
+  .setDescription("**تم إرساله في الخاص ي قمر**")
+     
+     
+  message.channel.sendEmbed(ra3d);
+    }
+});
+
+
+client.on('message', message => {
+if (message.content.startsWith('$help')){
+     let ra3d = new Discord.RichEmbed()
+  .setColor("#e9ab26")
+  .setDescription("**تم إرساله في الخاص ي حب**")
+     
+     
+  message.channel.sendEmbed(ra3d);
+    }
+});
+
+
 
 
 
